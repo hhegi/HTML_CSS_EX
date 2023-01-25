@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul type="circle" class ="title"> 
+        <!-- 리스트 // 배열로 저장됨 -->
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+    </ul>
+    <ol type="a" class="menu">
+        <!-- 순서대로 정렬된 리스트 -->
+        <li>title01</li>
+        <li>title02</li>
+        <li>title03</li>
+    </ol>
+
+    <script>
+        var ulTag = document.getElementsByClassName("title");
+        var ulList = ulTag[0].getElementsByTagName("li");
+
+        ulList[0].onclick = function(event){
+            ulList[0].style.backgroundColor ="Red";
+        }
+        ulList[1].onclick = function(event){
+            ulList[1].style.backgroundColor="Green";
+        }
+        ulList[2].onclick = function(event){
+            ulList[2].style.backgroundColor="Blue";
+        }
+
+    </script>
+</body>
+</html>
