@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>Documents</title>
+        <style>
+            body{background-color: aliceblue;}
+
+            #heading{
+                color :lightcoral
+            }
+            .welcome{
+                color:lightcoral
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <h1 id="heading">Hello World</h1>
+        <!-- 동일한 id는 한 번만 선언 가능   -->
+        <h3 class="welcome">오신 것을 환영합니다.</h3>
+        <!-- body > h3 -->
+
+
+
+        <script>
+            // DOM - Documents Object Model   
+            var h1Tag = document.getElementById("heading"); // 지정한 id나 클래스 명을 사용하기위해 변수로 선언
+            console.log(h1Tag);
+            console.dir(h1Tag);
+        </script>
+    </body>
+</html>
