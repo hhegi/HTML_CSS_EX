@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            background-color:aliceblue;
+            border:2px solid antiquewhite;
+            position: absolute;
+            left: 0px;
+            top:100px;
+            /* Left 속성값은 레이어 객체만 적용 */
+            transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        }
+        #btnGroup button{
+            width:80px;
+            height:50px;
+            margin:0px 0px 5px 0px;
+        }
+        /* ID와 그 자식 객체 */
+        button[data-pos-x="200"][data-pos-y="200"]{
+            background-color: red;
+        }
+        /* 스타일시트에서 속성 값 지정가능 */
+    </style>
+</head>
+<body>
+    <div id="btnGroup">    
+        <button data-pos-x="0" data-pos-y="0" class="playBtn">0,0</button>
+        <button data-pos-x="200" data-pos-y="0" class="playBtn">200,0</button>
+        <button data-pos-x="0" data-pos-y="200" class="playBtn">0,200</button>
+        <button data-pos-x="200" data-pos-y="200" class="playBtn">200,200</button>
+    </div>
+    <div id="box">Box</div>
+
+    <script>
+        var colors = ["blue","orange","brown","pink"];
+        var playBtnArr = document.getElementsByClassName("playBtn");
+        var box = document.getElementById("box");
+
+        for(var i=0;i<playBtnArr.length;i++){
+            playBtnArr[i].color = colors[i];
+            playBtnArr[i].onclick = function(event){
+                box.style.left = this.dataset.posX + "px";
+                box.style.top = this.dataset.posY + "px";
+                document.body.style.backgroundColor = this.color;
+            }
+        }
+    </script>
+</body>
+</html>
