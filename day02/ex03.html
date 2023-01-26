@@ -7,7 +7,8 @@
     <title>Document</title>
     <style>
         #nav>ul{
-            border:1px solid gray;
+            border-top:1px solid gray;
+            border-bottom: 1px solid gray;
             list-style: none;
             padding:0;
             overflow: hidden;
@@ -15,7 +16,7 @@
         }
         /* 순서가 없는 리스트 */
         #nav li{
-            border:1px solid black;
+            /* border:1px solid black; */
             width:200px;
             height:60px;
             display :block;
@@ -25,7 +26,19 @@
             line-height:60px;
             
         }
+        #nav li:hover{
+            background-color: antiquewhite;
+        }
         /* 순서가 있는 리스트 */
+        h1 {
+            text-align: center;
+            width: 1000px;
+        }
+        div#page{
+            width: 1000px;
+            margin: 0 auto;
+            /* margin의 좌, 우가 auto이면 가운데 정렬 */
+        }
     </style>
 </head>
 <body>
