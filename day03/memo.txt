@@ -22,4 +22,7 @@ JS if문에서 Null 값, undefined 는 모두 false를 반환한다
 
 StyleSheet 적용 우선순위 inline>internal>external
 
-backtick `` 템플릿 문자열
+backtick `` 문자열을 템플릿으로 인식
+
+함수 사용 시에 괄호 붙이지않음 
+
