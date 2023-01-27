@@ -1,0 +1,25 @@
+0127
+parseInt(String)
+문자열 값을 int 타입으로 변환시킨다
+Number(String)
+문자열 값을 int 타입으로 변환시킨다
+
+parseInt()는 숫자로 시작해서 문자로 끝날 경우에 뒤에 있는 문자열은 버리고
+숫자만을 반환하지만 
+Number()는 문자가 섞여있다면 NaN 값을 반환한다.
+반면에 parseInt()는 bool 값 등을 넣으면 NaN값을 반환하지만 
+Number()는 해당 결과에 맞는 정수형태로 출력한다.
+
+
+alert(value);
+경고창을 메세지와 함께 생성한다
+
+
+object.focus();
+커서 위치를 지정한다
+
+JS if문에서 Null 값, undefined 는 모두 false를 반환한다
+
+StyleSheet 적용 우선순위 inline>internal>external
+
+backtick `` 템플릿 문자열

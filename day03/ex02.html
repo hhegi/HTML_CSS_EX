@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+<script>
+    var arr = ["멜론","포도","바나나","사과"];
+    // arr.push(""); 배열에 값 추가
+    // arr.splice(시작 인덱스,범위); 배열 내 값 제거
+
+    for(var i=0; i<arr.length; i++) {
+            console.log(arr[i]);
+        }
+        for(var fish of arr) {
+            console.log(fish);
+        }
+        for(var i in arr) {
+            console.log(i);
+        }
+        arr.forEach(function(item, index) {
+            console.log(item, index);
+        });
+        
+        var newHtml = arr.map(function(item, index) {
+            return "<p>"+item+"</p>";
+        });
+        document.getElementById("demo").innerHTML = newHtml;
+
+</script>
+
+    </div>
+</body>
+</html>
