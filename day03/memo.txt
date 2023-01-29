@@ -24,5 +24,5 @@ StyleSheet 적용 우선순위 inline>internal>external
 
 backtick `` 문자열을 템플릿으로 인식
 
-함수 사용 시에 괄호 붙이지않음 
+함수 호출시에 선언 순서에 관계없이 호출가능
 
