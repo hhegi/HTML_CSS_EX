@@ -1,0 +1,13 @@
+0130
+
+function으로 선언하면 최상위 window의 멤버 필드에 들어간다
+* var 타입으로도 선언가능 
+
+document.forms
+문서의 모든 폼을 읽어서 HTMLCollection으로 반환한다.
+
+form 
+기본적으로 이벤트 발생시 페이지를 갱신시키기때문에 
+event.prevent() 함수를 통해 페이지의 갱신을 일시중단시킨다. 
+
+익명함수 호출 function() 대신 ()=> 사용 가능  

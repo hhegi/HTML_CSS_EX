@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form1 input[type=text],
+        #form1 textarea {
+            border: none;
+            border-bottom: 2px solid slategray;
+            background-color: lightblue;
+            width: 400px;
+        }
+    </style>
+    <script>
+        function validateform(form) {
+            form = event.target;
+            event.preventDefault();
+            console.log(form.subject);
+            console.log(form.writer);
+            if(form.subject.value==""){
+                alert("제목을 입력하세요");
+                form.subject.focus();
+                return false;
+            }
+            if(form.writer.value==""){
+                alert("작성자를 입력하세요");
+                form.writer.focus();
+                return false;
+            }
+            if(form.writer.value.length<2){
+                alert("이름을 두 글자 이상 입력해주세요");
+                form.writer.focus();
+                return false;
+            }
+
+            form.action = "https://www.naver.com";
+            form.submit();
+
+        }
+        
+        var form1 = document.getElementById("form1");
+        // window.onload =function(){
+        //     var form1 = document.getElementById("form1");
+
+        //     validateform(this);
+            
+        // }
+
+        form1.onsubmit = function(){
+            event.preventDefault();
+            validateform(this);
+        }
+        form1.onsubmit = validateform(this);
+
+
+    </script>
+</head>
+
+<body>
+    <h1>글쓰기</h1>
+    <form action="" id="form1" onsubmit="javascript:validateform(this)">
+        <table>
+            <tr>
+                <th>제목</th>
+                <td><input type="text" name="subject"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="writer"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea name="content" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" value="저장"></td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+    </script>
+</body>
+
+</html>
