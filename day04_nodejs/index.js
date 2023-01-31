@@ -14,10 +14,10 @@ app.get('/profile',(req,res)=>{
 
 app.get("/car",(req,res)=>{
     //쿼리스트링으로 전달된 파라미터마다 받아오기
-    let name = req.params.name;
-    let year = req.params.year;
+    let name = req.query.name;
+    let year = req.query.year;
     console.log(name,year);
-    
+
     res.writeHead(200,{"Content-Type":"text/html; charset=utf-8"})
     res.end("<h1>자동차 목록 페이지</h1>");
 

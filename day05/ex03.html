@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lists {
+            border: 1px solid black;
+            padding: 0;
+            width: 1000px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #lists>li {
+            border: 1px solid red;
+            display: inline-block;
+            list-style: none;
+            width: 80px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #slider {
+            position: relative;
+            width: 500px;
+            border: 1px solid yellow;
+            box-sizing: border-box;
+        }
+
+        #slider>button,
+        #slider>ul {
+            float: left;
+            position: absolute;
+        }
+
+        #slider>button {
+            width: 40px;
+        }
+
+        #slider>ul {
+            left: 40px;
+        }
+
+        #box {
+            border: 1px solid blue;
+            overflow: hidden;
+            width: 440px;
+            box-sizing: border-box;
+        }
+
+        #slider>button#rightBtn {
+            position: absolute;
+            left: 480px;
+        }
+
+        #slider>div#box {
+            position: absolute;
+            left: 40px;
+        }
+
+        #slider ul#lists {
+            position: relative;
+            transition: left .5s;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Home Page</h1>
+    <hr>
+    <div id="slider">
+        <button id="leftBtn">Left</button>
+        <button id="rightBtn">Right</button>
+        <div id="box">
+            <ul id="lists"></ul>
+        </div>
+    </div>
+
+    <script>
+        var itemNames = ["1", "2", "3", "4", "5", "6", "7", "8"];
+        var slider = document.getElementById("slider");
+        var lists = document.getElementById("lists");
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        itemNames.forEach(function (item, index, arr) {
+            var newLi = document.createElement("li");
+            newLi.innerHTML = itemNames[index];
+            newLi.className = "itemLi";
+            lists.appendChild(newLi);
+        });
+
+
+        var x = 0;
+        leftBtn.onclick = function () {
+            console.log(x);
+            if (x < 0)
+                x += 80;
+            lists.style.left = x + "px";
+            if (x > 0)
+                x = 0;
+            if (x == 43 || x== 0)
+                alert("처음입니다!");
+
+
+        }
+        rightBtn.onclick = function () {
+            console.log(x);
+            if (x >= -160)
+                x -= 80;
+            lists.style.left = x + "px";
+            if (x <= -240)
+                x = -123;
+            if (x == -203)
+                alert("마지막입니다!");
+
+
+        }
+    </script>
+</body>
+
+</html>
