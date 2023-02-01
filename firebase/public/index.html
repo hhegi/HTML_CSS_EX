@@ -39,11 +39,14 @@
       }
       .row.content {height:auto;} 
     }
+    div{
+      position: relative;
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -55,10 +58,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Main</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#main">Main</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
     </div>
@@ -74,13 +77,25 @@
       <p><a href="#"></a></p>
     </div>
     <!-- center -->
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <p>text</p>
+    <div class="col-sm-8 text-left" style="margin-top:80px"> 
+      <h1 id="main">Welcome</h1>
+      <p></p>
+      <br><br><br><br><br>
       <hr>
-      <h3>About Me</h3>
-      <p> . . . </p>
+      <h2 id="about">About Me</h2>
+      <br><br>
+      <h3> Name </h3>
+      <br><br>
+      <p> 양지호 </p>
+      <br><br><br>
+      <h3> Major</h3>
+      <br><br>
+      <p> 컴퓨터공학</p>
+      <br><br><br><br><br><br><br>
       <hr>
+      <h2 id="projects">Projects</h2>
+      <hr>
+      <h2 id="contact">Contact</h2>
     </div>
     <!-- right -->
     <div class="col-sm-2 sidenav">
@@ -90,7 +105,7 @@
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>Daegu Catholic University</p>
 </footer>
 
 </body>
