@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 10px;
+        }
+
+        div.container div {
+            padding: 3px;
+            margin: 3px;
+            /*border:1px solid black*/
+            width: 900px;
+            height: 200px;
+            background-color: aliceblue;
+
+        }
+        .header nav li{
+            float:left;
+            width:150px;
+            height: 40px;
+            border: 0px solid black;
+            list-style: none;
+            background-color: aliceblue;
+        }
+        .header h1{
+            font-size: 20px;
+            background-color:floralwhite;
+        }
+
+        div.container div.header{
+            background-color: beige;
+        }
+        div.body div{
+            width: 150px;
+            height: 180px;
+            float:left;
+            background-color: floar;
+        }
+        div.container div.body{
+            background-color:beige;
+        }
+        div.body div.center{
+            width: 550px;
+            height: 190px;
+            float:inline-start;
+        }
+        div.center div{
+            height:80px;
+            width: 260px;
+            background-color: aliceblue;
+        }
+        div.center div:nth-child(1){
+            width: 535px;
+            height: 80px;
+            background-color:aliceblue;
+        }
+        div.body div.left{
+            height: 190px;
+        }
+        
+        div.left div{
+            height: 20px;
+            width: 120px;
+        background-color: aliceblue;
+        }
+        div.right div{
+            background-color: aliceblue;
+        }
+        div.right div:nth-child(1){
+            width: 135px;
+            height: 40px;
+        }
+        div.right div:nth-child(2){
+            width: 135px;
+            height: 110px;
+        }
+        div.container div.footer{
+            background-color: beige;
+        }
+        div.footer{
+            clear:both;
+            height:90px;
+        }
+
+        div.footer div{
+            width: 885px;
+            height: 185px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>홈페이지</h1>
+            <nav class="menu">
+                <ul>
+                    <li>HOME</li>
+                    <li>PROFILE</li>
+                    <li>RECTURE</li>
+                    <li>GALLERY</li>
+                    <li>BOARD</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="body">
+            <div class="left">
+                <nav class="lList">
+                    <div>left1</div>
+                    <div>left2</div>
+                    <div>left3</div>
+                    <div>left4</div>
+                    <div>left5</div>
+                </n>
+            </div>
+            <div class="center">
+                <div>banner</div>
+                <div>section1</div>
+                <div>section2</div>
+            </div>
+            <div class="right">
+                <div>right1</div>
+                <div>right2</div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>footer</div>
+
+        </div>
+    </div>
+</body>
+
+</html>
