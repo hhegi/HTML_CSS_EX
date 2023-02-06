@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.myCell{
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        class MyDivCell{
+            constructor(parentElement,contents){
+                this.newDiv = document.createElement("div");
+                this.newDiv.innerHTML = contents;
+                this.newDiv.className = "myCell";
+                this.newDiv.addEventListener('click',(event)=>{
+                    console.log(this);
+                });
+                parentElement.appendChild(this.newDiv);
+                return this;
+            }
+        }
+
+        new MyDivCell(demo,"<h1>Hello</h1>");
+        new MyDivCell(demo,"<h1>My</h1>");
+        new MyDivCell(demo,"<h1>Name</h1>");
+        new MyDivCell(demo,"<h1>Is</h1>");
+        new MyDivCell(demo,"<h1>JIHO</h1>");
+    </script>
+</body>
+</html>
