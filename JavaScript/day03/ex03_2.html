@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>월별 일수</h1>
+    <div id="monthBtns">
+        <button data-month="1">
+            1월
+        </button>
+        <button data-month="2">
+            2월
+        </button>
+        <button data-month="3">
+            3월
+        </button>
+        <button data-month="4">
+            4월
+        </button>
+        <button data-month="5">
+            5월
+        </button>
+        <button data-month="6">
+            6월
+        </button>
+        <button data-month="7">
+            7월
+        </button>
+        <button data-month="8">
+            8월
+        </button>
+        <button data-month="9">
+            9월
+        </button>
+        <button data-month="10">
+            10월
+        </button>
+        <button data-month="11">
+            11월
+        </button>
+        <button data-month="12">
+            12월
+        </button>
+    </div>
+    <div id="demo">선택해주세요</div>
+
+
+    <script>
+        var monthBtns = document.querySelectorAll("div#monthBtns > button");
+        var month = [];
+        var demo = document.querySelector("#demo");
+
+        monthBtns.forEach(function (item, index) {
+            month.push(item);
+        });
+       // console.dir(month);
+
+        month.forEach(function (item, index) {
+            item.addEventListener('click', (event) => {
+                var target = event.target.dataset.month;
+                var result = "";
+                //console.log(target);
+                switch (target) {
+                    case "1": case "3": case "5": case "7": case "8": case "10": case "12":
+                        result = `${target}월은 31일까지 있습니다.`;
+                        break;
+                    case "4": case "6": case "9": case "11":
+                    result = `${target}월은 30일까지 있습니다.`;
+                        break;
+                    case "2":
+                    result = `${target}월은 29일까지 있습니다.`;
+                }
+               // console.log(result);
+                demo.innerHTML = result;
+            }
+            )
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var num;
+        // //undefined, Null, NaN 등은 false와 동일하다.
+        // if(num){
+        //     document.write("true");
+        // }else{
+        //     document.write("false");
+        // }
+
+
+        //prompt로 입력받은 값은 기본적으로 string type 이다.
+        //Number() 함수에 NaN 값을 넣으면 0을 반환한다.
+        var age = prompt("나이 입력: ");
+        document.write(`<h2>당신의 나이는 ${age}세입니다.</h2><br>`);
+
+        if (age > 19) {
+            var isAdult = "성인";
+        } else {
+            isAdult = "미성년자";
+        }
+        document.write(`당신은 ${isAdult} 입니다.`);
+    </script>
+</body>
+
+</html>
