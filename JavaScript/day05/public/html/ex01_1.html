@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>localStorage 실습</h1>
+    <script>
+        var arr = ["포도","사과","바나나"];
+        // window.localStorage.setItem(key,value);
+        localStorage.setItem("user","Jiho-Yang");
+        localStorage.setItem("fruits",arr);
+
+        var user2= localStorage.getItem("user");
+        document.write(`<h2>User2 : ${user2}</h2>`);
+
+        var fruits2 = localStorage.getItem("fruits");
+        for(let item of fruits2){
+            document.write(item);
+        }
+    </script>
+</body>
+</html>

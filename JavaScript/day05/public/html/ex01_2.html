@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 실습</title>
+</head>
+<body>
+    <h2>JSON 실습</h2>
+
+    <script>
+        const myObj = {name:"John",age:"31",city:"New York"};
+        // console.log(myObj);
+
+        const jsonStr = JSON.stringify(myObj);
+        // console.log(jsonStr);
+        // 전체를 일반 문자열로 출력
+
+        const myJSON = '{"name":"John","age":31,"city":"New York"}';
+        const jsonObj = JSON.parse(myJSON);
+        console.log(jsonObj);
+    </script>
+</body>
+</html>

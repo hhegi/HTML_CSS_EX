@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- underscore cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js" integrity="sha512-2V49R8ndaagCOnwmj8QnbT1Gz/rie17UouD9Re5WxbzRVUGoftCu5IuqqtAM9+UC3fwfHCSJR1hkzNQh/2wdtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>JSDay05Ex02_3</title>
+</head>
+
+<body>
+    <h1>JS Day05 Ex02_3</h1>
+    <div id="demo">
+        Ajax기술로 people_list.json 파일의 내용을 로드한다.
+    </div>
+    <p><button id="loadBtn">Load</button></p>
+<script type="text/template" id="peopleListTmp">
+    <table border="1" width="100%">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>전화번호</th>
+        </tr>
+    <%
+    console.log(peopleList);
+    for(var row of peopleList) {
+    %>
+        <tr>
+            <td><%=row.no%></td>
+            <td><%=row.name%></td>
+            <td><%=row.email%></td>
+            <td><%=row.phone%></td>
+        </tr>
+    <% } // end of for %>
+    </table>
+
+
+    <script type="text/template"></script>
+    <script>
+        let demo = document.getElementById("demo");
+        let loadBtn = document.getElementById("loadBtn");
+        let peopleListTmp = document.getElementById("peopleListTmp");
+
+
+        loadBtn.addEventListener("click", (event) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = (event)=> {
+                let peopleList = JSON.parse(xhr.responseText)["peopleList"];
+                let compile = _.template(peopleListTmp.innerHTML);
+                let html = compile({peopleList});
+            };
+            xhr.open("GET","http://localhost:3000/js/people_list.json",true);
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>
