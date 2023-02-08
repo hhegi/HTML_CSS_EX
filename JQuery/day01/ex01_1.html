@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery cdn -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    
+    <script>
+        // $(Object) JQuery 객체로 변환
+        // $(document).on("ready",function(){
+        //     alert("Hello JQuery!!");
+        // });
+        // $(document).ready(function(){
+        //     alert("Hello JQuery!!");
+        // });
+        // $(function(){
+        //     alert("Hello JQuery!!");
+        // });
+        // 모두 동일한 기능 
+        jQuery(function(){
+            $("#clickBtn").on("click",function(event){
+                alert("Hello JQuery!!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="clickBtn">click!!</button>
+</body>
+</html>

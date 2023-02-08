@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jQuery cdn -->
+        <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <div id="btns">
+        <button id="redBtn">Red</button>
+        <button id="greenBtn">Green</button>
+        <button id="blueBtn">Blue</button></div>
+
+        <script>
+            // var btns = document.getElementById("btns").getElementsByTagName("button");
+
+            // for(var btn of btns){
+            //     btn.onclick = function(){
+            //         document.body.style.backgroundColor = this.innerText;
+            //     }
+            // }
+
+            // List 형태의 여러 요소에 동시 이벤트 적용
+            $("#btns > button").click(function(){
+                //$() 함수에 DOM 객체를 인자로 넣으면 바로 JQuery 객체가 됨
+                $("body").css("backgrondColor",$(this).text());
+            });
+        </script>
+</body>
+</html>
