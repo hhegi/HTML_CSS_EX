@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
+    <script type="text/template">
+        <table width="100%" border="1">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>company</th>
+                <th>year</th>
+            </tr>
+            <%
+                for(var car of carList){
+            %>
+            <tr>
+                <td><%=car.no%></td>
+                <td><%=car.name%></td>
+                <td><%=car.price%></td>
+                <td><%=car.company%></td>
+                <td><%=car.year%></td>
+            </tr>
+            <%
+                }
+            %>
+        </table>
+    </script>
+</head>
+
+<body>
+    <h1>중고 차 매매 쇼핑몰</h1>
+    <form id="carForm" method="post">
+        <table>
+            <caption>중고 차 정보 입력</caption>
+            (tr>)
+            </table></form>
+    <div id="carListBox"></div>
+
+        <script>
+            $(document).ready(function(){
+                $.get("/car",function(data,status,xhr){
+                    if(status==='success'){
+                        var carList = data;
+                        var compile = _.template($("#carListTmp").html());
+                        var html = compile({carList});
+                        $("#carListBox").html(html);
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>
