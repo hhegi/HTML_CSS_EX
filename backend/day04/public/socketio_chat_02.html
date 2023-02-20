@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      // var socket = io(); 같은 주소 상에서 접근할 때
+      //다른 주소에 접속할 때는 직접 주소 입력
+      var socket = io.connect("http://localhost:3000");
+
+      socket.on("news", function (data) {
+        console.log(data);
+      });
+      socket.on("this", function (data) {
+        console.log(data);
+        console.log(data.will);
+      });
+      socket.emit("private message", "지호", "ㅎㅇ");
+      socket.emit("hi", "ㅎㅇ");
+    </script>
+  </body>
+</html>

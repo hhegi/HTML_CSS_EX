@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0220</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><blockquote>
+<p>multer 설치</p>
+</blockquote>
+<p>npm i multer -S</p>
+<blockquote>
+<p>fs 모듈</p>
+</blockquote>
+<p>require(“fs”);<br>
+파일에 대한 전반적인 처리를 하는 모듈  따로 설치x</p>
+<blockquote>
+<p>body parser 	선언</p>
+</blockquote>
+<p>post 전송 방식을 사용하기 위해 bodyParser 선언</p>
+<pre><code>let  storage  =  multer.diskStorage({
+    destination:  function (req, file, callback) {
+    callback(null, "uploads");
+},
+    filename:  function (req, file, callback) {
+    callback(null, Date.now() +  file.originalname);
+    },
+});
+</code></pre>
+<blockquote>
+<p>업로드 옵션 제어</p>
+</blockquote>
+<p>파일 개수 및 용량 제한</p>
+<pre><code>let  upload  =  multer({
+	storage:  storage,
+	limit: {
+		files:  10,
+		fileSize:  1024  *  1024  *  1024,
+	},
+});
+</code></pre>
+<p>res.end(JSON.stringify({ cnt }));</p>
+<p>res.end(); 매개변수로 문자열만 사용 가능!!<br>
+JSON.stringify() JSON문자열로 변환해줌<br>
+또는 res.send() 사용</p>
+<h2 id="section"></h2>
+<blockquote>
+<p><a href="http://socket.io">socket.io</a> 활용하기</p>
+</blockquote>
+<p>npm i <a href="http://socket.io">socket.io</a> -S<br>
+패키지 설치</p>
+<p><a href="http://socket.io">socket.io</a> 버전이 바뀌면서 문법 변경</p>
+<pre><code>const  server  =  http.createServer(app);
+const { Server } =  require("socket.io");
+const  io  =  new  Server(server);
+</code></pre>
+<p><a href="http://socket.io">socket.io</a> 호출과 함께 서버포트를 함께 연동</p>
+<blockquote>
+<p>클라이언트에서 <a href="http://socket.io">socket.io</a> 사용</p>
+</blockquote>
+<pre><code>&lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var socket = io();
+&lt;/script&gt;
+</code></pre>
+<p>cdn을 사용하거나 socket.io가 설치된 서버에서 직접 호출해도 됨</p>
+<blockquote>
+<p>Server &lt;-&gt; Client 상호작용</p>
+</blockquote>
+<p>emit 이벤트 전송<br>
+on 이벤트 받기</p>
+</div>
+</body>
+
+</html>
